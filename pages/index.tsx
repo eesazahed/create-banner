@@ -223,7 +223,7 @@ const Home: NextPage = () => {
           </label>
         </div>
       </form>
-      <p className="text-center my-4 max-w-[720px] mx-auto">
+      <p className="text-center my-4 max-w-[720px] mx-auto leading-7">
         Only valid web safe{" "}
         <a
           rel="noreferrer"
