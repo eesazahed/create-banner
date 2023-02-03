@@ -1,5 +1,5 @@
 import type { NextPage } from "next";
-import type { FormData } from "../pages/index";
+import { FormData, isGradient, isLink } from "../pages/index";
 
 const Banner: NextPage<FormData> = ({
   title,
@@ -8,20 +8,22 @@ const Banner: NextPage<FormData> = ({
   textBackground,
   bgColDir,
   textColDir,
+  font,
+  imagePosition,
+  textImagePosition,
 }) => {
   return (
     <div
-      className="w-[720px] h-[240px] lg:w-[1080px] lg:h-[360px] m-auto grid place-items-center text-center"
+      className="w-[1080px] h-[360px] m-auto grid place-items-center text-center"
       id="banner"
       style={
-        backgroundColor?.includes("https://") ||
-        backgroundColor?.includes("http://")
+        isLink(backgroundColor)
           ? {
               backgroundImage: `url(${backgroundColor})`,
-              backgroundPosition: "center",
+              backgroundPosition: imagePosition,
               backgroundSize: "cover",
             }
-          : backgroundColor?.includes(",")
+          : isGradient(backgroundColor)
           ? {
               backgroundImage: `linear-gradient(${bgColDir}deg, ${backgroundColor})`,
             }
@@ -29,21 +31,25 @@ const Banner: NextPage<FormData> = ({
       }
     >
       <h1
-        className="text-6xl lg:text-8xl font-bold m-8 bg-clip-text text-transparent"
-        style={
-          textBackground?.includes("https://") ||
-          textBackground?.includes("http://")
+        className={`text-8xl font-bold m-8 ${
+          (isLink(textBackground) || isGradient(textBackground)) &&
+          "bg-clip-text text-transparent"
+        }
+        `}
+        style={{
+          fontFamily: font,
+          ...(isLink(textBackground)
             ? {
                 backgroundImage: `url(${textBackground})`,
-                backgroundPosition: "center",
+                backgroundPosition: textImagePosition,
                 backgroundSize: "cover",
               }
-            : textBackground?.includes(",")
+            : isGradient(textBackground)
             ? {
                 backgroundImage: `linear-gradient(${textColDir}deg, ${textBackground})`,
               }
-            : { backgroundColor: textBackground }
-        }
+            : { color: textBackground }),
+        }}
       >
         {title}
         <br />
@@ -52,5 +58,4 @@ const Banner: NextPage<FormData> = ({
     </div>
   );
 };
-
 export default Banner;
