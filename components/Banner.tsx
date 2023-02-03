@@ -31,7 +31,7 @@ const Banner: NextPage<FormData> = ({
       }
     >
       <h1
-        className={`text-8xl font-bold m-8 ${
+        className={`text-8xl font-bold m-8 ${!subtitle && "leading-loose"} ${
           (isLink(textBackground) || isGradient(textBackground)) &&
           "bg-clip-text text-transparent"
         }
