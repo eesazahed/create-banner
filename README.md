@@ -2,4 +2,4 @@
 
 This app allows you to create a banner.
 
-For the background and text color, you can separate colors with commas to use a gradient as a background.
+For the background and text color, you can separate colors with commas to use a gradient as a background. You can also use an image url for an image background.

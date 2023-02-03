@@ -18,6 +18,13 @@ const Banner: NextPage<FormData> = ({
           ? {
               backgroundImage: `linear-gradient(${bgColDir}deg, ${backgroundColor})`,
             }
+          : backgroundColor?.includes("https://") ||
+            backgroundColor?.includes("http://")
+          ? {
+              backgroundImage: `url(${backgroundColor})`,
+              backgroundPosition: "center",
+              backgroundSize: "cover",
+            }
           : {
               backgroundColor: backgroundColor,
             }
@@ -29,6 +36,13 @@ const Banner: NextPage<FormData> = ({
           textBackground?.includes(",")
             ? {
                 backgroundImage: `linear-gradient(${textColDir}deg, ${textBackground})`,
+              }
+            : textBackground?.includes("https://") ||
+              textBackground?.includes("http://")
+            ? {
+                backgroundImage: `url(${textBackground})`,
+                backgroundPosition: "center",
+                backgroundSize: "cover",
               }
             : {
                 backgroundColor: textBackground,
