@@ -140,6 +140,11 @@ const Home: NextPage = () => {
           </label>
         </div>
       </form>
+      <p className="text-center my-4 max-w-[720px] mx-auto">
+        For the background and text color, you can separate colors with commas
+        to use a gradient as a background. You can also use an image url for an
+        image background.
+      </p>
       <p className="text-center my-8">
         by{" "}
         <a

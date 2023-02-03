@@ -11,3 +11,15 @@
     background: #222222;
   }
 }
+
+@media only screen and (max-width: 1120px) {
+  html {
+    zoom: 0.75;
+  }
+}
+
+@media only screen and (max-width: 1080px) {
+  html {
+    zoom: 0.9;
+  }
+}
