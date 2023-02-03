@@ -1,4 +1,4 @@
-# create-banner [View Live](https://eesazahed.github.io/create-banner)
+# create-banner ([View Live](https://eesazahed.github.io/create-banner))
 
 This app allows you to create a banner.
 
