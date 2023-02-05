@@ -33,10 +33,10 @@ const labelStyle = "px-2 py-1 mx-2 my-2";
 const linkStyle = "text-blue-600 hover:text-blue-700 dark:text-blue-500";
 
 const Home: NextPage = () => {
-  const [formData, setFormData] = useState<FormData>({
+ const [formData, setFormData] = useState<FormData>({
     title: "Title",
     subtitle: "Subtitle",
-    backgroundColor: "darkblue",
+    backgroundColor: "DarkSlateBlue",
     textBackground: "cyan, lime",
     bgColDir: 90,
     textColDir: 90,
@@ -44,7 +44,7 @@ const Home: NextPage = () => {
     imagePosition: "center",
     textImagePosition: "center",
   });
-
+	
   return (
     <div className="my-8 w-[1080px] mx-auto">
       <Head>
@@ -225,15 +225,6 @@ const Home: NextPage = () => {
       </form>
       <p className="text-center my-4 max-w-[720px] mx-auto leading-7">
         Only valid web safe{" "}
-        <a
-          rel="noreferrer"
-          target="_blank"
-          href="https://www.w3schools.com/cssref/css_colors.php"
-          className={linkStyle}
-        >
-          CSS colors
-        </a>{" "}
-        and{" "}
         <a
           rel="noreferrer"
           target="_blank"
